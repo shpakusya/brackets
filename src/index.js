@@ -5,13 +5,13 @@ module.exports = function check(str, bracketsConfig) {
 		if (str[i] === bracketsConfig[y][0] && str[i] === bracketsConfig[y][1] ) {
 		stack[stack.length-1] !== y ? stack.push(y) :  stack.pop()
 		}
-			  else if (str[i] === bracketsConfig[y][0]){
-				  stack.push(y)
-			  } else if (str[i] === bracketsConfig[y][1]){
-				if (stack[stack.length-1] === y) {
-				  stack.pop()
-				} else return false
-			  } 
+		else if (str[i] === bracketsConfig[y][0]){
+			stack.push(y)
+		} else if (str[i] === bracketsConfig[y][1]){
+			if (stack[stack.length-1] === y) {
+				stack.pop()
+			} else return false
+		} 
 	  }
 	  }
 	return stack.length === 0 ? true : false;
